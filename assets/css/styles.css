@@ -446,6 +446,7 @@ body.dark-theme {
     column-gap: .5rem;
     font-size: var(--small-font-size);
     font-weight: var(--font-semi-bold);
+    padding-bottom: 12px;
 }
 
 .qualification__title i {
