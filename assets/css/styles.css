@@ -70,7 +70,7 @@ body {
     background-color: var(--body-color);
     color: var(--text-color);
     margin-bottom: 120px;
-    /* transition: background .4s; for dark mode animation */
+    transition: background .4s;
 }
     
 h1, h2, h3 {
@@ -93,7 +93,18 @@ img {
 }
     
     /*=============== THEME ===============*/
-    
+.nav__buttons{
+    display: flex;
+    align-items: center;
+    column-gap: 1.5rem;
+}
+
+.change-theme{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .3s;
+}
     
     /*========== Variables Dark theme ==========*/
 body.dark-theme {
@@ -107,7 +118,38 @@ body.dark-theme {
         Color changes in some parts of 
         the website, in light theme
     ==========*/
-    
+.dark-theme .nav,
+.dark-theme .nav__menu,
+.dark-theme .scrollup{
+    background-color: var(--container-color);
+    box-shadow: 0 4px 20px hsla(207, 24%, 8%, .4);
+}
+
+.dark-theme .home__shape-wawes,
+.dark-theme .home__shape-circle,
+.dark-theme .qualification__img{
+    filter: invert(1);
+}
+
+.dark-theme .home__social-link{
+    color: var(--title-color);
+}
+
+.dark-theme .section__border{
+    border-bottom: 1px solid hsl(207, 4%, 32%);
+}
+
+.dark-theme::-webkit-scrollbar{
+    background-color: hsl(207, 4%, 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb{
+    background-color: hsl(207, 4%, 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(207, 4%, 35%);
+}
     
     /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
@@ -169,6 +211,7 @@ body.dark-theme {
     box-shadow: 0 4px 20px hsla(207, 24%, 35%, .1);
     padding-inline: 1.5rem;
     border-radius: 3rem;
+    transition: background .4s;
 }
 
     .nav__logo,
@@ -242,7 +285,9 @@ body.dark-theme {
 }
     
     /* Active link */
-    
+.active-link{
+    color: var(--title-color);
+}
     
     /*=============== HOME ===============*/
 .home__container {
@@ -269,6 +314,7 @@ body.dark-theme {
     justify-self: center;
     border-radius: 6.25rem;
     place-items: center;
+    transition: background .4s;
 }
 
 .home__perfil{
@@ -392,6 +438,7 @@ body.dark-theme {
     border-radius: 3rem;
     place-items: center;
     margin-bottom: 1rem;
+    transition: background .4s;
 }
 
 .skills__blob img {
@@ -499,7 +546,7 @@ body.dark-theme {
     text-align: center;
     padding: 3.5rem 1rem;
     border-radius: 7.25rem;
-
+    transition: background .4s;
 }
 
 .services__card i {
@@ -740,6 +787,7 @@ body.dark-theme {
     font-size: var(--small-font-size);
     font-weight: var(--font-medium);
     padding: .35rem;
+    transition: background .4s;
 }
 
 .contact__form-area{
@@ -763,22 +811,116 @@ body.dark-theme {
 
 .contact__form .contact__button i {
     font-size: 1.5rem;
+    font-weight: initial;
+}
+
+.contact__message{
+    font-size: var(--small-font-size);
+    position: absolute;
+    bottom: 2.8rem;
+    left: 1.5rem;
+}
+
+.color-red{
+    color: hsl(4, 71%, 50%);
+}
+
+.color-blue{
+    color: hsl(207, 56%, 45%);
+}
+
+    /*=============== FOOTER ===============*/
+.footer__container{
+    padding: 3rem auto;
+    text-align: center;
+}
+
+.footer__title{
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 1rem;
+}
+
+.footer__list,
+.footer__social{
+    display: flex;
+    justify-content: center;
+}
+
+.footer__list{
+    margin: 2.5rem 0;
+    column-gap: 2.5rem;
+}
+
+.footer__link{
+    color: var(--title-color);
+}
+
+.footer__link:hover{
+    text-decoration: underline;
+}
+
+.footer__social{
+    column-gap: 1.25rem;
+}
+
+.footer__social-link{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    transition: transform .3s;
+}
+
+.footer__social-link:hover{
+    transform: translateY(-.15rem);
+}
+
+.footer__copy{
+    display: block;
+    margin-top: 4.5rem;
+    font-size: var(--smaller-font-size);
+    color: var(--text-color-light);
 }
     
-    /* Status color */
-    
-    
-    /*=============== FOOTER ===============*/
-    
-    
     /*=============== SCROLL BAR ===============*/
-    
+::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsl(207, 4%, 75%);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: hsl(207, 4%, 65%);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: hsl(207, 4%, 55%);
+}
     
     /*=============== SCROLL UP ===============*/
-    
+.scrollup{
+    position: fixed;
+    right: 1rem;
+    bottom: -30%;
+    background-color: var(--body-color);
+    box-shadow: 0 4px 12px hsl(207, 24%, 35%, .15);
+    display: inline-flex;
+    padding: .35rem;
+    border-radius: .25rem;
+    font-size: 1.1rem;
+    color: var(--title-color);
+    z-index: var(--z-tooltip);
+    transition: bottom .3s, transform .3s;
+}
+
+.scrollup:hover{
+    transform: translateY(-.25rem);
+}
     
     /* Show Scroll Up*/
-    
+.show-scroll{
+    bottom: 7.5rem;
+}
     
     /*=============== BREAKPOINTS ===============*/
     /* For small devices */
